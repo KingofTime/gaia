@@ -1,0 +1,7 @@
+.env
+poetry.lock
+.hypothesis
+
+__pycache__/
+
+db.sqlite3

@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "gaia"
+version = "0.1.0"
+description = "Location and Address API"
+authors = ["Kingoftime <antonio_neto77@hotmail.com.br>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.0.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

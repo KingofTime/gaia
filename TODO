@@ -1,0 +1,35 @@
+Uma API que serve para consulta de localidades em todos os paises.
+Ele vai ser dividido em servidores, cada um focado em um pais ou grupo de paises
+
+> Global
+gaia.com/countries: Retorna uma lista de paises, com as seguintes informacoes:
+    - Nome
+    - Abreviacao
+    - DDI
+    - Fuso Horário
+    - Lingua Principal
+    - Bandeira
+    - Link para o servidor do pais
+
+> Brazil
+
+gaia.com/brazil/hierarchy: Retorna a hierarquia de unidades federativas ordenado do maior para o menor
+    - Nome da Unidade
+    - Link para pesquisa da unidade
+
+    Exemplo:
+    [
+        {
+            name: "Region",
+            link: gaia.com/brazil/regions
+        }
+        {
+            name: "States",
+            link: gaia.com/brazil/states
+        },
+        {
+            name: "Cities",
+            link: gaia.com/brazil/cities
+        }
+
+    ]
