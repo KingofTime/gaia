@@ -7,7 +7,8 @@ ENV PYTHONUNBUFFERED 1
 
 COPY poetry.lock pyproject.toml /app/
 
-RUN pip3 install poetry
+RUN apt install python3-dev libpq-dev && \
+ pip3 install poetry
 RUN poetry install
 
 COPY ./docker/entrypoint.sh /entrypoint.sh

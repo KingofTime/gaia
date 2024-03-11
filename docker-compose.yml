@@ -1,16 +1,41 @@
 version: '3.9'
 
 services:
+  database:
+    image: postgres:16.2
+    restart: always
+    env_file: .env
+    environment:
+      - POSTGRES_DB="${DB_NAME}"
+      - POSTGRES_USER="${DB_USER}"
+      - POSTGRES_PASSWORD="${DB_PASSWORD}"
+    volumes:
+      - dbdata:/var/lib/postgres/data
+    ports:
+      - ${DB_FORWARD_PORT}:${DB_PORT}
+    networks:
+      - gaia_network
+  
   api:
     build:
       context: .
       dockerfile: docker/Dockerfile
     image: gaia-api
+    env_file: .env
+    depends_on: 
+      - database
     command: poetry run python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
     ports:
-      - '8000:8000'
-    env_file:
-      - ./.env
+      - 8000:8000
+    networks:
+      - gaia_network
+  
+volumes:
+  dbdata:
+
+networks:
+  gaia_network:
+    driver: bridge
     

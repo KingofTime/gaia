@@ -33,3 +33,11 @@ gaia.com/brazil/hierarchy: Retorna a hierarquia de unidades federativas ordenado
         }
 
     ]
+
+
+Proximos passos:
+
+[ ] Configurar banco de dados PostgreSQL
+[ ] Configurar NGINX
+[ ] Configurar Testes e Linters usando o pyproject.toml 
+[ ] Fazer o primeiro endpoint - Listagem de Paises
